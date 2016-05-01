@@ -8,7 +8,7 @@
   */
 
 module.exports =(app) =>{
-    app.all('/', (req,res) => {
+    app.all('/api', (req,res) => {
         res.status(200).send({status:'Api Up and Running!'})
         })
     }

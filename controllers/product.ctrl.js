@@ -46,34 +46,52 @@ module.exports = (app) => {
     app.route('/api/products')
         /**
          * @api {get} /products Request List of products
-         * @apiName GetUser
-         * @apiGroup User
+         * @apiName GetProducts
+         * @apiGroup Products
          *
-         * @apiParam {Number} id Users unique ID.
+         * @apiParam {Number} limit default 10.
+         * @apiParam {Number} skip default 10.
          *
-         * @apiSuccess {String} firstname Firstname of the User.
-         * @apiSuccess {String} lastname  Lastname of the User.
+         * @apiSuccess {Number} count Total count of found produtcs.
+         * @apiSuccess (Products) {Number} id  Id of product.
+         * @apiSuccess (Products) {String} name name of product.
+         * @apiSuccess (Products) {Nummber} price of product.
          *
          * @apiSuccessExample Success-Response:
          *     HTTP/1.1 200 OK
          *     {
-         *       "firstname": "John",
-         *       "lastname": "Doe"
+         *       "count" : 4,
+         *       "products":[
+         *          {
+         *          "name": "TV",
+         *          "price": "1000"
+         *          }
+         *       ]
          *     }
          *
-         * @apiError UserNotFound The id of the User was not found.
-         *
-         * @apiErrorExample Error-Response:
-         *     HTTP/1.1 404 Not Found
-         *     {
-         *       "error": "UserNotFound"
-         *     }
          */
         .get(ProductCtrl.index)
         .post(ProductCtrl.create)
 
        app.route('/api/products/:id')
         .delete(ProductCtrl.destroy)
+        /**
+         * @api {put} /product/:id Update product
+         * @apiName PutProduct
+         * @apiGroup Products
+         *
+         * @apiParam {Number} id          Product id.
+         * @apiParam {String} [name]      Product name.
+         * @apiParam {String} [price]     Product price.
+         *
+         * @apiSuccessExample Success-Response:
+         *     HTTP/1.1 200 OK
+         *     {
+         *        "updated": 1,
+         *         "message": "Guncelleneme Basarili"
+         *      }
+         *
+         */
         .put(ProductCtrl.update)
 
 }

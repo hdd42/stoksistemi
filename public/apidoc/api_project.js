@@ -1,6 +1,6 @@
 define({
   "name": "Product",
-  "version": "1",
+  "version": "0.1.0",
   "description": "Stok Takip Sistemi",
   "title": "Stok Takip Sistemi",
   "url": "http://localhost/api",
@@ -8,7 +8,7 @@ define({
   "apidoc": "0.2.0",
   "generator": {
     "name": "apidoc",
-    "time": "2016-05-01T12:34:13.036Z",
+    "time": "2016-05-01T12:53:09.182Z",
     "url": "http://apidocjs.com",
     "version": "0.16.1"
   }
