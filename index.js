@@ -4,13 +4,13 @@ import consign from "consign";
 const app = express();
 
 consign()
-    .include('boot')
-    .then('route.js')
-    .into(app)
+    .include("libs/config.js")
+    .then("libs/db.js")
+    .then("middlewares")
+    .then("controllers")
+    .then("error.js")
+    .then("libs/boot.js")
+    .into(app);
 
-app.get("/", (req,res) => {
-    res.status(200).send("Merhaba Node.js");
+module.exports = app;
 
-})
-
-app.listen(3000, () => console.log(`uygulamamiz 3000 nolu port uzerinde calismakta`))
