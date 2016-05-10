@@ -20,4 +20,6 @@ params: {
 ```
 eger sqlite kullancaksaniz ; host:'localhost'  satirini asagidaki gibi degistirin;
 
+```javascript
 storage: 'stoksistemi.sqlite'
+```
