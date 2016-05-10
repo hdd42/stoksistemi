@@ -4,7 +4,7 @@ npm install
 komutuyla, uygulamamız için gerekli npm paketlerini indirip, sonrasında config-dev dosyamızın içinde veri tabanı ayaralarını yaptıktan sonra;
 
 npm start
-#2 dev-config.js dosyamiz daki ilgili kismi kullanmak istedigniz veri tabanina gore guncellemeyi unutmayin,
+### dev-config.js dosyamiz daki ilgili kismi kullanmak istedigniz veri tabanina gore guncellemeyi unutmayin,
 
 database:'veri_tabani_ismi',
 username: "kullanici_adi",
