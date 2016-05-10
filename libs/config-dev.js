@@ -1,5 +1,6 @@
-module.exports = {
-    database: "yg",
+
+let config ={
+    database:'yg',
     username: "yg",
     password: "123456",
     params: {
@@ -7,9 +8,12 @@ module.exports = {
         host: 'localhost',
 
         define: {
-            underscored: true,
-            debug:true
+            underscored: true
         }
     },
-    port:process.env.NODE_ENV||3000
-};
+    tokenSecret:'c369775a-9a9b-4bbd-bd72-5a2294c76d82',
+    expiresIn:'5h',
+    port: process.env.PORT || 3000
+}
+
+module.exports = config

@@ -44,6 +44,11 @@ module.exports = (sequelize, DataType) => {
             defaultScope: {
                 attributes: ["id", "name", "email","role"]
             },
+            scopes:{
+                "login":{
+                    attributes:["id", "name", "email","role","password"]
+                }
+            },
 
             paranoid: true,
             hooks: {
@@ -55,8 +60,13 @@ module.exports = (sequelize, DataType) => {
             classMethods: {
                 associate: (models) => {
                     return false;
+                },
+                isPasswordCorrect:(encoded,password) =>{
+                    console.log(encoded," , ",password)
+                    return bcrypt.compareSync(password,encoded);
                 }
-            }
+            },
+            logging: process.env.NODE_ENV =='test'? false :true
         }
     );
     Users.hook('afterCreate', function (user, options) {

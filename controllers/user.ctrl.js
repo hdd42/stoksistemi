@@ -3,8 +3,15 @@ module.exports = (app) => {
     class UserCtrl {
 
         static index(req, res, next) {
-
+           
             User.findAll()
+                .then(users => {
+                    return res.status(200).send({count:users.length,users})
+                })
+                .catch(err => next(err))
+        }
+        static find(req, res, next) {
+            User.findById(req.params.id)
                 .then(user => {
                     return res.status(200).send({user})
                 })
@@ -45,6 +52,12 @@ module.exports = (app) => {
         .post(UserCtrl.create)
 
     app.route('/api/users/:id')
+        .all((req,res,next) => {
+            if(isNaN(req.params.id)){
+                return next(new Error('Gecersiz id formati'))}
+            next()
+        })
+        .get(UserCtrl.find)
         .delete(UserCtrl.destroy)
         .put(UserCtrl.update)
 }

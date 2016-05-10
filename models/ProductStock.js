@@ -51,7 +51,8 @@ module.exports = (sequelize, DataType) => {
                 associate: (models) => {
                     ProductsStocks.belongsTo(models.Products)
                 }
-            }
+            },
+        logging: process.env.NODE_ENV =='test'? false :true
         }
 
     );

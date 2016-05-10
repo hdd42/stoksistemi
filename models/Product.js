@@ -29,7 +29,8 @@ module.exports = (sequelize, DataType) => {
                 type: DataType.INTEGER,
                 defaultValue: 20
             }
-        },{
+        },
+        {
            //scopes
         defaultScope: {
             attributes: ["id", "name", "price",["stockLevel","Stock Alarm Level"],["salesPrice","Sales price"]]

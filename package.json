@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "",
+    "test": "npm run db:seed && mocha test/index --compilers js:babel-register",
     "start": "babel-node index.js",
-    "apidoc":"apidoc -i controllers/  -o public/apidoc"
+    "apidoc": "apidoc -i controllers/  -o public/apidoc",
+    "db:seed": "babel-node libs/seeder.js "
   },
   "keywords": [],
   "author": "",
@@ -17,16 +18,27 @@
     "bcrypt": "^0.8.6",
     "body-parser": "^1.15.0",
     "bookshelf": "^0.9.4",
+    "casual": "^1.5.2",
     "consign": "^0.1.2",
     "express": "^4.13.4",
+    "jsonwebtoken": "^6.2.0",
     "knex": "^0.10.0",
+    "lodash": "^4.11.1",
     "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.0.0",
     "pg": "^4.5.5",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^3.22.0"
+    "request": "^2.72.0",
+    "sequelize": "^3.22.0",
+    "sqlite": "0.0.4"
   },
   "devDependencies": {
     "apidoc": "^0.16.1",
+    "babel-register": "^6.7.2",
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "mocha": "^2.4.5",
     "sqlite3": "^3.1.3"
   }
 }

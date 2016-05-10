@@ -1,4 +1,7 @@
-export class ValidationErrors{
+import casual from 'casual'
+
+
+export default class ValidationErrors{
     static getError(err){
         const validationerrorList = ['SequelizeUniqueConstraintError','SequelizeValidationError','SequelizeForeignKeyConstraintError']
         if(!err.name ){
@@ -25,6 +28,16 @@ export class ValidationErrors{
 
         error.status = 400;
         return error;
+    }
+
+
+   static getUser(){
+        return {
+            name:casual.full_name,
+            email:casual.email.replace('@',`${casual.integer(100,200)}@`),
+            password:'123456'
+
+        }
     }
 
 }
