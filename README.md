@@ -4,7 +4,7 @@ npm install
 komutuyla, uygulamamız için gerekli npm paketlerini indirip, sonrasında config-dev dosyamızın içinde veri tabanı ayaralarını yaptıktan sonra;
 
 npm start
-### dev-config.js dosyamiz daki ilgili kismi kullanmak istedigniz veri tabanina gore guncellemeyi unutmayin,
+### dev-config.js dosyamızdaki ilgili kismi kullanmak istediğiniz veri tabanına göre güncellemeyi unutmayın,
 ```javascript
 database:'veri_tabani_ismi',
 username: "kullanici_adi",
@@ -18,7 +18,7 @@ params: {
     }
 }
 ```
-eger sqlite kullancaksaniz ; host:'localhost'  satirini asagidaki gibi degistirin;
+eger sqlite kullanacaksaniz ; host:'localhost'  satırını aşağıdaki gibi degiştirin;
 
 ```javascript
 storage: 'stoksistemi.sqlite'
