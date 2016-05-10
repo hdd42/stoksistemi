@@ -5,8 +5,7 @@ komutuyla, uygulamamız için gerekli npm paketlerini indirip, sonrasında confi
 
 npm start
 ### dev-config.js dosyamiz daki ilgili kismi kullanmak istedigniz veri tabanina gore guncellemeyi unutmayin,
-
-`{
+```javascript
 database:'veri_tabani_ismi',
 username: "kullanici_adi",
 password: "sifre",
@@ -18,8 +17,7 @@ params: {
         underscored: true
     }
 }
-}`
-
+```
 eger sqlite kullancaksaniz ; host:'localhost'  satirini asagidaki gibi degistirin;
 
 storage: 'stoksistemi.sqlite'
