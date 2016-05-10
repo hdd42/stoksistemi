@@ -1,8 +1,8 @@
 
 let config ={
-    database:'yg',
-    username: "yg",
-    password: "123456",
+    database:'',
+    username: "",
+    password: "",
     params: {
         dialect: "postgres",
         host: 'localhost',
