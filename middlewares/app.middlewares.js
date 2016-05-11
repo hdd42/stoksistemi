@@ -14,4 +14,3 @@ module.exports = (app) => {
 
     app.use('*', (req,res) => res.json({message:"Api up and running!"}))
 }
-
